@@ -16,11 +16,35 @@ npm 工具包集合，方便大家工作和查找。
   ```
 
 ## File Tools
-- [minimatch]() 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
+- [minimatch](https://www.npmjs.com/package/minimatch) 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
   ```js
   const minimatch = require("minimatch");
 
   minimatch("bar.foo", "*.foo"); // true!
   minimatch("bar.foo", "*.bar"); // false!
   minimatch("bar.foo", "*.+(bar|foo)", { debug: true }); // true
+  ```
+
+## Command Line
+- [commander](https://www.npmjs.com/package/commander) 命令行参数解析工具。支持定义参数规则，还有中文文档
+  ```js
+  // index.js
+  const { program } = require('commander');
+
+  program
+    .option('--first')
+    .option('-s, --separator <char>');
+
+  program.parse();
+
+  const options = program.opts();
+  const limit = options.first ? 1 : undefined;
+  ```
+  ```zsh
+  # command
+  $ node split.js -s / --fits a/b/c
+  error: unknown option '--fits'
+  (Did you mean --first?)
+  $ node split.js -s / --first a/b/c
+  [ 'a' ]
   ```
