@@ -4,9 +4,12 @@ npm 工具包集合，方便大家工作和查找。
 ## 目录
 - [*Server Tools*](#server-tools)
 - [*File Tools*](#file-tools)
+- [*Command Line*](#command-line)
+- [*Promise*](#promise)
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
+
   ```js
   const portfinder = require('portfinder');
  
@@ -17,6 +20,7 @@ npm 工具包集合，方便大家工作和查找。
 
 ## File Tools
 - [minimatch](https://www.npmjs.com/package/minimatch) 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
+
   ```js
   const minimatch = require("minimatch");
 
@@ -27,6 +31,7 @@ npm 工具包集合，方便大家工作和查找。
 
 ## Command Line
 - [commander](https://www.npmjs.com/package/commander) 命令行参数解析工具。支持定义参数规则，还有中文文档
+
   ```js
   // index.js
   const { program } = require('commander');
@@ -40,11 +45,53 @@ npm 工具包集合，方便大家工作和查找。
   const options = program.opts();
   const limit = options.first ? 1 : undefined;
   ```
-  ```zsh
-  # command
+  ```bash
+  # output
   $ node split.js -s / --fits a/b/c
   error: unknown option '--fits'
   (Did you mean --first?)
   $ node split.js -s / --first a/b/c
   [ 'a' ]
+  ```
+  
+## Promise
+- [promise-limit](https://www.npmjs.com/package/promise-limit) 显示并发 Promise 的数量，一般在 `Promise.all` 发起大量 Promise 时使用.
+
+  ```js
+  const promiseLimit = require('promise-limit');
+  const limit = promiseLimit(2);
+  const jobs = ['a', 'b', 'c', 'd', 'e'];
+
+  Promise.all(jobs.map((name) => {
+    return limit(() => job(name));
+  })).then(results => {
+    console.log();
+    console.log('results:', results);
+  })
+
+  function job (name) {
+    const text = `job ${name}`;
+    console.log('started', text);
+
+    return new Promise(function (resolve) {
+      setTimeout(() => {
+        console.log('       ', text, 'finished');
+        resolve(text);
+      }, 100);
+    });
+  }
+  ```bash
+  # output
+  started job a
+  started job b
+          job a finished
+          job b finished
+  started job c
+  started job d
+          job c finished
+          job d finished
+  started job e
+          job e finished
+
+  results: [ 'job a', 'job b', 'job c', 'job d', 'job e' ]
   ```
