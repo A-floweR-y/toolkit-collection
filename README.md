@@ -6,6 +6,7 @@ npm 工具包集合，方便大家工作和查找。
 - [*File Tools*](#file-tools)
 - [*Command Line*](#command-line)
 - [*Promise*](#promise)
+- [*Browser*](#browser)
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
@@ -22,11 +23,23 @@ npm 工具包集合，方便大家工作和查找。
 - [minimatch](https://www.npmjs.com/package/minimatch) 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
 
   ```js
-  const minimatch = require("minimatch");
+  const minimatch = require('minimatch');
 
-  minimatch("bar.foo", "*.foo"); // true!
-  minimatch("bar.foo", "*.bar"); // false!
-  minimatch("bar.foo", "*.+(bar|foo)", { debug: true }); // true
+  minimatch('bar.foo', '*.foo'); // true!
+  minimatch('bar.foo', '*.bar'); // false!
+  minimatch('bar.foo', '*.+(bar|foo)', { debug: true }); // true
+  ```
+  
+- [glob](https://www.npmjs.com/package/glob) 基于 [minimatch](https://www.npmjs.com/package/minimatch) 的 glob 表达式文件查找工具。
+
+  ```js
+  const glob = require('glob');
+
+  // options 是个可选项
+  glob('**/*.js', options, function (err, files) {
+    // files 是一个文件数组
+    // err 是一个文件对象
+  })
   ```
 
 ## Command Line
@@ -55,7 +68,7 @@ npm 工具包集合，方便大家工作和查找。
   ```
   
 ## Promise
-- [promise-limit](https://www.npmjs.com/package/promise-limit) 显示并发 Promise 的数量，一般在 `Promise.all` 发起大量 Promise 时使用.
+- [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
   ```js
   const promiseLimit = require('promise-limit');
@@ -94,4 +107,14 @@ npm 工具包集合，方便大家工作和查找。
           job e finished
 
   results: [ 'job a', 'job b', 'job c', 'job d', 'job e' ]
+  ```
+
+## Browser
+- [ua-parser-js](https://www.npmjs.com/package/ua-parser-js) `navigator.userAgent` 解析器，能提供详细的数据：浏览器名称、系统名称、设备型号/类型等等。并且可以针对自定义的 `navigator.userAgent` 进行扩展。
+
+  ```js
+  import UAParser from 'ua-parser-js';
+  
+  const uaInfo = UAParser;
+  // { ua: '', browser: {}, cpu: {}, device: {}, engine: {}, os: {} }
   ```
