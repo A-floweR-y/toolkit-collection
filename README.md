@@ -118,3 +118,30 @@ npm 工具包集合，方便大家工作和查找。
   const uaInfo = UAParser;
   // { ua: '', browser: {}, cpu: {}, device: {}, engine: {}, os: {} }
   ```
+- [web-vitals](https://www.npmjs.com/package/web-vitals) 用于测量真实用户测的性能指标：[CLS](https://web.dev/cls/)、[FID](https://web.dev/fid/)、[LCP](https://web.dev/lcp/)、[FCP](https://web.dev/fcp/) 和 [TTFB](https://web.dev/ttfb/)。
+  ```js
+  import {getLCP, getFID, getCLS} from 'web-vitals';
+
+  getCLS(console.log);
+  getFID(console.log);
+  getLCP(console.log);
+  ```
+- [node-schedule](https://www.npmjs.com/package/node-schedule) NodeJS 定时任务工具。
+  ```js
+  const schedule = require('node-schedule');
+
+  const job = schedule.scheduleJob('42 * * * *', function(){
+    console.log('The answer to life, the universe, and everything!');
+  });
+  ```
+  ```
+  *    *    *    *    *    *
+  ┬    ┬    ┬    ┬    ┬    ┬
+  │    │    │    │    │    │
+  │    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
+  │    │    │    │    └───── month (1 - 12)
+  │    │    │    └────────── day of month (1 - 31)
+  │    │    └─────────────── hour (0 - 23)
+  │    └──────────────────── minute (0 - 59)
+  └───────────────────────── second (0 - 59, OPTIONAL)
+  ```
