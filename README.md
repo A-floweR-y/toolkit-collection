@@ -18,6 +18,26 @@ npm 工具包集合，方便大家工作和查找。
     .then((port) => // ... 可以使用的端口)
     .catch((e) => // ... 出问题了);
   ```
+ 
+- [node-schedule](https://www.npmjs.com/package/node-schedule) NodeJS 定时任务工具。
+  ```js
+  const schedule = require('node-schedule');
+
+  const job = schedule.scheduleJob('42 * * * *', function(){
+    console.log('The answer to life, the universe, and everything!');
+  });
+  ```
+  ```
+  *    *    *    *    *    *
+  ┬    ┬    ┬    ┬    ┬    ┬
+  │    │    │    │    │    │
+  │    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
+  │    │    │    │    └───── month (1 - 12)
+  │    │    │    └────────── day of month (1 - 31)
+  │    │    └─────────────── hour (0 - 23)
+  │    └──────────────────── minute (0 - 59)
+  └───────────────────────── second (0 - 59, OPTIONAL)
+  ```
 
 ## File Tools
 - [minimatch](https://www.npmjs.com/package/minimatch) 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
@@ -125,23 +145,4 @@ npm 工具包集合，方便大家工作和查找。
   getCLS(console.log);
   getFID(console.log);
   getLCP(console.log);
-  ```
-- [node-schedule](https://www.npmjs.com/package/node-schedule) NodeJS 定时任务工具。
-  ```js
-  const schedule = require('node-schedule');
-
-  const job = schedule.scheduleJob('42 * * * *', function(){
-    console.log('The answer to life, the universe, and everything!');
-  });
-  ```
-  ```
-  *    *    *    *    *    *
-  ┬    ┬    ┬    ┬    ┬    ┬
-  │    │    │    │    │    │
-  │    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
-  │    │    │    │    └───── month (1 - 12)
-  │    │    │    └────────── day of month (1 - 31)
-  │    │    └─────────────── hour (0 - 23)
-  │    └──────────────────── minute (0 - 59)
-  └───────────────────────── second (0 - 59, OPTIONAL)
   ```
