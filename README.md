@@ -86,6 +86,27 @@ npm 工具包集合，方便大家工作和查找。
   $ node split.js -s / --first a/b/c
   [ 'a' ]
   ```
+
+- [minimist](https://www.npmjs.com/package/minimist) 轻量级命令行参数解析器
+
+```js
+const argv = require('minimist')(process.argv.slice(2));
+console.log(argv);
+```
+
+```base
+$ node example/parse.js -x 3 -y 4 -n5 -abc --beep=boop foo bar baz
+{
+  _: [ 'foo', 'bar', 'baz' ],
+  x: 3,
+  y: 4,
+  n: 5,
+  a: true,
+  b: true,
+  c: true,
+  beep: 'boop'
+}
+```
   
 ## Promise
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
