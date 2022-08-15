@@ -2,11 +2,11 @@
 npm 工具包集合，方便大家工作和查找。
 
 ## 目录
-- [*Server Tools*](#server-tools)
-- [*File Tools*](#file-tools)
-- [*Command Line*](#command-line)
-- [*Promise*](#promise)
-- [*Browser*](#browser)
+- [*Server Tools*](#server-tools) 服务相关工具
+- [*File Tools*](#file-tools) 文件处理相关工具
+- [*Command Line*](#command-line) 命令行相关工具
+- [*Promise*](#promise) Promise 相关工具
+- [*Browser*](#browser) 浏览器相关工具
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
