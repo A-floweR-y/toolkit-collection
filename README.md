@@ -108,6 +108,24 @@ npm 工具包集合，方便大家工作和查找。
   }
   ```
   
+- [prompts](https://www.npmjs.com/package/prompts) 命令行交互工具
+  ```js
+  const prompts = require('prompts');
+
+  (async () => {
+    const response = await prompts({
+      type: 'number',
+      name: 'value',
+      message: 'How old are you?',
+      validate: value => value < 18 ? `Nightclub is 18+ only` : true
+    });
+
+    console.log(response); // => { value: 24 }
+  })();
+  ```
+  demo:
+  ![prompts demo](https://github.com/terkelg/prompts/raw/master/media/example.gif)
+  
 ## Promise
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
