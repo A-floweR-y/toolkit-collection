@@ -126,6 +126,13 @@ npm 工具包集合，方便大家工作和查找。
   demo:
   ![prompts demo](https://github.com/terkelg/prompts/raw/master/media/example.gif)
   
+- [chalk](https://www.npmjs.com/package/chalk) 命令行输入彩色文本
+  ```js
+  import chalk from 'chalk';
+
+  console.log(chalk.blue('Hello world!'));
+  ```
+  
 ## Promise
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
