@@ -4,9 +4,10 @@ npm 工具包集合，方便大家工作和查找。
 ## 目录
 - [*Server Tools*](#server-tools) 服务相关工具
 - [*File Tools*](#file-tools) 文件处理相关工具
-- [*Command Line*](#command-line) 命令行相关工具
-- [*Promise*](#promise) Promise 相关工具
-- [*Browser*](#browser) 浏览器相关工具
+- [*Command Line Tools*](#command-line-tools) 命令行相关工具
+- [*Promise Tools*](#promise-tools) Promise 相关工具
+- [*Browser Tools*](#browser-tools) 浏览器相关工具
+- [*Counter Tools*](#counter-tools) 计算相关
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
@@ -62,7 +63,7 @@ npm 工具包集合，方便大家工作和查找。
   })
   ```
 
-## Command Line
+## Command Line Tools
 - [commander](https://www.npmjs.com/package/commander) 命令行参数解析工具。支持定义参数规则，还有中文文档
 
   ```js
@@ -133,7 +134,7 @@ npm 工具包集合，方便大家工作和查找。
   console.log(chalk.blue('Hello world!'));
   ```
   
-## Promise
+## Promise Tools
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
   ```js
@@ -177,7 +178,7 @@ npm 工具包集合，方便大家工作和查找。
   results: [ 'job a', 'job b', 'job c', 'job d', 'job e' ]
   ```
 
-## Browser
+## Browser Tools
 - [ua-parser-js](https://www.npmjs.com/package/ua-parser-js) `navigator.userAgent` 解析器，能提供详细的数据：浏览器名称、系统名称、设备型号/类型等等。并且可以针对自定义的 `navigator.userAgent` 进行扩展。
 
   ```js
@@ -194,3 +195,19 @@ npm 工具包集合，方便大家工作和查找。
   getFID(console.log);
   getLCP(console.log);
   ```
+
+## Counter Tools
+- [bytes](https://www.npmjs.com/package/bytes) 将字符串解析为字节，或者字节解析为字符串。
+
+  ```js
+  const bytes = require('bytes');
+  
+  bytes(1024);
+  // output: '1KB'
+  
+  bytes('1KB');
+  // output: 1024
+  ```
+  
+  bytes 的参数如果是数字，就会返回字符串的单位格式。如果是字符串，就会返回数字格式的字节数。如果我们希望**不管是数字还是字符串，都返回字节数**。那么可以用 `bytes.parse()`。如果你为了方便，也可以使用 [humanize-bytes](https://www.npmjs.com/package/humanize-bytes), 它只是对 `bytes()` 做了一个小小的包装。
+  
