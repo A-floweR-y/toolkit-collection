@@ -211,3 +211,14 @@ npm 工具包集合，方便大家工作和查找。
   
   bytes 的参数如果是数字，就会返回字符串的单位格式。如果是字符串，就会返回数字格式的字节数。如果我们希望**不管是数字还是字符串，都返回字节数**。那么可以用 `bytes.parse()`。如果你为了方便，也可以使用 [humanize-bytes](https://www.npmjs.com/package/humanize-bytes), 它只是对 `bytes()` 做了一个小小的包装。
   
+- [crypto-js](https://www.npmjs.com/package/crypto-js) js 加密算法标准库，几乎涵盖了工作用到的加密算法。支持 Nodejs 和 浏览器中运行。
+  ```js
+  import sha256 from 'crypto-js/sha256';
+  import hmacSHA512 from 'crypto-js/hmac-sha512';
+  import Base64 from 'crypto-js/enc-base64';
+
+  const message, nonce, path, privateKey; // ...
+  const hashDigest = sha256(nonce + message);
+  const hmacDigest = Base64.stringify(hmacSHA512(path + hashDigest, privateKey));
+  ```
+
