@@ -8,6 +8,7 @@ npm 工具包集合，方便大家工作和查找。
 - [*Promise Tools*](#promise-tools) Promise 相关工具
 - [*Browser Tools*](#browser-tools) 浏览器相关工具
 - [*Counter Tools*](#counter-tools) 计算相关
+- [*Javascript Tools*](#javascript-tools) Javascript 工具，（仅限于语言，没有明确的使用场景）
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
@@ -21,6 +22,7 @@ npm 工具包集合，方便大家工作和查找。
   ```
  
 - [node-schedule](https://www.npmjs.com/package/node-schedule) NodeJS 定时任务工具。
+
   ```js
   const schedule = require('node-schedule');
 
@@ -110,6 +112,7 @@ npm 工具包集合，方便大家工作和查找。
   ```
   
 - [prompts](https://www.npmjs.com/package/prompts) 命令行交互工具
+
   ```js
   const prompts = require('prompts');
 
@@ -130,6 +133,7 @@ npm 工具包集合，方便大家工作和查找。
   相同功能的工具还有 [inquirer](https://www.npmjs.com/package/inquirer)（下载量最多，**推荐！！**）、[enquirer](https://www.npmjs.com/package/enquirer)（跟 inquirer 类似）
   
 - [chalk](https://www.npmjs.com/package/chalk) 命令行输入彩色文本
+
   ```js
   import chalk from 'chalk';
 
@@ -190,6 +194,7 @@ npm 工具包集合，方便大家工作和查找。
   // { ua: '', browser: {}, cpu: {}, device: {}, engine: {}, os: {} }
   ```
 - [web-vitals](https://www.npmjs.com/package/web-vitals) 用于测量真实用户测的性能指标：[CLS](https://web.dev/cls/)、[FID](https://web.dev/fid/)、[LCP](https://web.dev/lcp/)、[FCP](https://web.dev/fcp/) 和 [TTFB](https://web.dev/ttfb/)。
+
   ```js
   import {getLCP, getFID, getCLS} from 'web-vitals';
 
@@ -214,6 +219,7 @@ npm 工具包集合，方便大家工作和查找。
   bytes 的参数如果是数字，就会返回字符串的单位格式。如果是字符串，就会返回数字格式的字节数。如果我们希望**不管是数字还是字符串，都返回字节数**。那么可以用 `bytes.parse()`。如果你为了方便，也可以使用 [humanize-bytes](https://www.npmjs.com/package/humanize-bytes), 它只是对 `bytes()` 做了一个小小的包装。
   
 - [crypto-js](https://www.npmjs.com/package/crypto-js) js 加密算法标准库，几乎涵盖了工作用到的加密算法。支持 Nodejs 和 浏览器中运行。
+
   ```js
   import sha256 from 'crypto-js/sha256';
   import hmacSHA512 from 'crypto-js/hmac-sha512';
@@ -224,3 +230,45 @@ npm 工具包集合，方便大家工作和查找。
   const hmacDigest = Base64.stringify(hmacSHA512(path + hashDigest, privateKey));
   ```
 
+## Javascript Tools
+- [deepmerge](https://www.npmjs.com/package/deepmerge) js 对象深度合并。支持自定义合并策略。
+
+  ```js
+  const x = {
+    foo: { bar: 3 },
+    array: [{
+        does: 'work',
+        too: [ 1, 2, 3 ]
+    }]
+  }
+
+  const y = {
+      foo: { baz: 4 },
+      quux: 5,
+      array: [{
+          does: 'work',
+          too: [ 4, 5, 6 ]
+      }, {
+          really: 'yes'
+      }]
+  }
+
+  const output = {
+      foo: {
+          bar: 3,
+          baz: 4
+      },
+      array: [{
+          does: 'work',
+          too: [ 1, 2, 3 ]
+      }, {
+          does: 'work',
+          too: [ 4, 5, 6 ]
+      }, {
+          really: 'yes'
+      }],
+      quux: 5
+  }
+
+  merge(x, y) // => output
+  ```
