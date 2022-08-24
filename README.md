@@ -8,7 +8,7 @@ npm 工具包集合，方便大家工作和查找。
 - [*Promise Tools*](#promise-tools) Promise 相关工具
 - [*Browser Tools*](#browser-tools) 浏览器相关工具
 - [*Counter Tools*](#counter-tools) 计算相关
-- [*Javascript Tools*](#javascript-tools) Javascript 工具，（仅限于语言，没有明确的使用场景）
+- [*Javascript Tools*](#javascript-tools) Javascript 工具（仅限于语言，没有明确的使用场景）
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
