@@ -127,6 +127,8 @@ npm 工具包集合，方便大家工作和查找。
   demo:
   ![prompts demo](https://github.com/terkelg/prompts/raw/master/media/example.gif)
   
+  相同功能的工具还有 [inquirer](https://www.npmjs.com/package/inquirer)（下载量最多，**推荐！！**）、[enquirer](https://www.npmjs.com/package/enquirer)（跟 inquirer 类似）
+  
 - [chalk](https://www.npmjs.com/package/chalk) 命令行输入彩色文本
   ```js
   import chalk from 'chalk';
