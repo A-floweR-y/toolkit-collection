@@ -139,7 +139,24 @@ npm 工具包集合，方便大家工作和查找。
 
   console.log(chalk.blue('Hello world!'));
   ```
-  
+
+- [semver](https://www.npmjs.com/package/semver) semver, 是一个语义化版本号管理的模块，可以实现版本号的解析和比较，规范版本号的格式。
+
+  ```js
+  const semver = require('semver')
+
+  semver.valid('1.2.3') // '1.2.3'
+  semver.valid('a.b.c') // null
+  semver.clean('  =v1.2.3   ') // '1.2.3'
+  semver.satisfies('1.2.3', '1.x || >=2.5.0 || 5.0.0 - 7.2.3') // true
+  semver.gt('1.2.3', '9.8.7') // false
+  semver.lt('1.2.3', '9.8.7') // true
+  semver.minVersion('>=1.0.0') // '1.0.0'
+  semver.valid(semver.coerce('v2')) // '2.0.0'
+  semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
+  ```
+  了解关于版本号的更多内容，可以[点击这里](./desc/version.md)
+
 ## Promise Tools
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
