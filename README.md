@@ -157,6 +157,16 @@ npm 工具包集合，方便大家工作和查找。
   ```
   了解关于版本号的更多内容，可以[点击这里](./desc/version.md)
 
+- [execa](https://www.npmjs.com/package/execa) execa 是对 child_process 的封装，提供了更友好的方式操作子进程。
+
+  ```js
+  import {execa} from 'execa';
+
+  const {stdout} = await execa('echo', ['unicorns']);
+  console.log(stdout);
+  //=> 'unicorns'
+  ```
+
 ## Promise Tools
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
