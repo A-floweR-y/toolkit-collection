@@ -42,6 +42,13 @@ npm 工具包集合，方便大家工作和查找。
   └───────────────────────── second (0 - 59, OPTIONAL)
   ```
 
+- [uuid](https://www.npmjs.com/package/uuid) uuid 生成器
+
+  ```js
+  import { v4 as uuidv4 } from 'uuid';
+  uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+  ```
+
 ## File Tools
 - [minimatch](https://www.npmjs.com/package/minimatch) 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
 
