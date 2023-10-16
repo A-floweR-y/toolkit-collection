@@ -49,6 +49,12 @@ npm 工具包集合，方便大家工作和查找。
   uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
   ```
 
+- [pm2](https://www.npmjs.com/package/pm2)  Node.js 应用程序的生产流程管理器，具有内置负载均衡器。它允许您使应用程序永远保持活动状态，无需停机即可重新加载它们，并简化常见的系统管理任务。
+
+  ```js
+  pm2 start app.js
+  ```
+
 ## File Tools
 - [minimatch](https://www.npmjs.com/package/minimatch) 使用 glob 表达式的文件匹配工具。如果你想用 glob 表达式去匹配一下文件用它就 OK 了。
 
