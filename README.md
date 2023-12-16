@@ -8,6 +8,7 @@ npm 工具包集合，方便大家工作和查找。
 - [*Promise Tools*](#promise-tools) Promise 相关工具
 - [*Browser Tools*](#browser-tools) 浏览器相关工具
 - [*Counter Tools*](#counter-tools) 计算相关
+- [*Builder Tools*](#builder-tools) 构建相关
 - [*Javascript Tools*](#javascript-tools) Javascript 工具（仅限于语言，没有明确的使用场景）
 
 ## Server Tools
@@ -269,6 +270,54 @@ npm 工具包集合，方便大家工作和查找。
   const hashDigest = sha256(nonce + message);
   const hmacDigest = Base64.stringify(hmacSHA512(path + hashDigest, privateKey));
   ```
+
+## Builder Tools
+- [acorn](https://www.npmjs.com/package/acorn) 把 string javascript 代码解析成 AST 语法树。
+
+  ```js
+  let acorn = require("acorn");
+  console.log(acorn.parse("1 + 1", {ecmaVersion: 2020}));
+  // output
+  // {
+  //   "type": "Program",
+  //  "start": 0,
+  //  "end": 5,
+  //  "body": [
+  //    {
+  //      "type": "ExpressionStatement",
+  //      "start": 0,
+  //      "end": 5,
+  //      "expression": {
+  //        "type": "BinaryExpression",
+  //        "start": 0,
+  //        "end": 5,
+  //        "left": {
+  //          "type": "Literal",
+  //          "start": 0,
+  //          "end": 1,
+  //          "value": 1,
+  //          "raw": "1"
+  //        },
+  //        "operator": "+",
+  //        "right": {
+  //          "type": "Literal",
+  //          "start": 4,
+  //          "end": 5,
+  //          "value": 1,
+  //          "raw": "1"
+  //        }
+  //      }
+  //    }
+  //  ],
+  //  "sourceType": "module"
+  //}
+  ```
+  rollup 和 webpack 内部都在使用 `acorn` 做 AST 语法树的解析。同样类似功能的还有：[recast](https://www.npmjs.com/package/recast)，它提供了多种解释器，非常的强大。
+  当然，你也可以选择我们最为熟悉的 `@babel/paser`，它最初也是对 `acorn` 的一个 fork。
+  这里有一篇关于各种 js 解释器的介绍，可以了解一下：[JavaScript 各种解析器的介绍](https://segmentfault.com/a/1190000038645422);
+
+  很多时候，我们的多数工作仅仅只是对源代码进行轻微的修改，[recast](https://www.npmjs.com/package/recast) 这样的库对我们来说完全没有必要。这里另外推荐一个。
+  [magic-string](https://www.npmjs.com/package/magic-string): 它能让你操作代码字符串和生成源映射。
 
 ## Javascript Tools
 - [deepmerge](https://www.npmjs.com/package/deepmerge) js 对象深度合并。支持自定义合并策略。
