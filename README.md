@@ -11,6 +11,7 @@ npm 工具包集合，方便大家工作和查找。
 - [*Builder Tools*](#builder-tools) 构建相关
 - [*Javascript Tools*](#javascript-tools) Javascript 工具（仅限于语言，没有明确的使用场景）
 - [*Canvas Tools*](#canvas-tools) Canvas 工具
+- [*AI Tools*](#ai-tools) AI 工具
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
@@ -389,4 +390,11 @@ npm 工具包集合，方便大家工作和查找。
   snapdom.toPng(document.body).then(img => {
     document.body.appendChild(img);
   });
+  ```
+
+## AI Tools
+- [stagehand](https://www.stagehand.dev/) 操作无头浏览器+AI加持，对比 [Puppeteer](https://puppeteer.bootcss.com/api)，支持 Chrome + Fixfox。也是 [Puppeteer](https://puppeteer.bootcss.com/api) 的开发团队开发的。
+
+  ```js
+  page.goto("browserstore.com/cookies");
   ```
