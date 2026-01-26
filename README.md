@@ -470,5 +470,7 @@ const useBear = create((set) => ({
 
 - [Expo](https://expo.dev/) 基于 RN 做了开发环境的集成，用户直接通过 ts + react 开发就行，不需要配置开发环境（因为 RN 的开发环境配置需要安卓等原生知识）。
 
+- [INK](https://github.com/vadimdemedes/ink) 用 React 语法构建命令行 CLI 界面。最终打包产物是一个可运行文件，它运行环境还是 nodejs。
+
 ## Other
 - [BentoPDF](https://www.bentopdf.com/) 一个免费的 PDF 工具集网站
