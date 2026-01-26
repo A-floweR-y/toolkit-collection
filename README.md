@@ -207,24 +207,24 @@ npm 工具包集合，方便大家工作和查找。
 
 
 - [listr2](https://www.npmjs.com/package/listr2) 这是一个任务列表的形式来展示loading的工具，如果需要列表（同步/异步）来展示 loading，可以用这个包。
-```ts
-import { Listr } from 'listr2'
-
-interface Ctx {
-  /* some variables for internal use */
-}
-
-const tasks = new Listr<Ctx>(
-  [
-    /* tasks */
-  ],
-  {
-    /* options */
+  ```ts
+  import { Listr } from 'listr2'
+  
+  interface Ctx {
+    /* some variables for internal use */
   }
-)
-```
-demo:<br>
-![Listr2 Demo](https://media.githubusercontent.com/media/listr2/listr2/master/examples/renderer-default.gif)
+  
+  const tasks = new Listr<Ctx>(
+    [
+      /* tasks */
+    ],
+    {
+      /* options */
+    }
+  )
+  ```
+  demo:<br>
+  ![Listr2 Demo](https://media.githubusercontent.com/media/listr2/listr2/master/examples/renderer-default.gif)
 
 
 ## Promise Tools
