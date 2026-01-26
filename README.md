@@ -12,6 +12,10 @@ npm 工具包集合，方便大家工作和查找。
 - [*Javascript Tools*](#javascript-tools) Javascript 工具（仅限于语言，没有明确的使用场景）
 - [*Canvas Tools*](#canvas-tools) Canvas 工具
 - [*AI Tools*](#ai-tools) AI 工具
+- [*React Ecology*](#react-ecology) React 生态
+- [*Vue Ecology*](#vue-ecology) Vue 生态
+- [*Cross platform Framework*](#cross-platform-framework) 跨端框架
+- [*Other](#ohter) 跟前端无关的工具
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
@@ -255,6 +259,7 @@ npm 工具包集合，方便大家工作和查找。
   const uaInfo = UAParser;
   // { ua: '', browser: {}, cpu: {}, device: {}, engine: {}, os: {} }
   ```
+
 - [web-vitals](https://www.npmjs.com/package/web-vitals) 用于测量真实用户测的性能指标：[CLS](https://web.dev/cls/)、[FID](https://web.dev/fid/)、[LCP](https://web.dev/lcp/)、[FCP](https://web.dev/fcp/) 和 [TTFB](https://web.dev/ttfb/)。
 
   ```js
@@ -264,6 +269,14 @@ npm 工具包集合，方便大家工作和查找。
   getFID(console.log);
   getLCP(console.log);
   ```
+
+- [stagehand](https://www.stagehand.dev/) 操作无头浏览器+AI加持，对比 [Puppeteer](https://puppeteer.bootcss.com/api)，支持 Chrome + Fixfox。也是 [Puppeteer](https://puppeteer.bootcss.com/api) 的开发团队开发的。如果需要做自动化测试，也可以参考一下 [playwright](https://playwright.dev/)
+
+  ```js
+  page.goto("browserstore.com/cookies");
+  ```
+
+- [capo.js](https://rviscomi.github.io/capo.js/) 检测网页 header 资源的加载循序进行优化。有 Chrome 插件。
 
 ## Counter Tools
 - [bytes](https://www.npmjs.com/package/bytes) 将字符串解析为字节，或者字节解析为字符串。
@@ -383,6 +396,15 @@ npm 工具包集合，方便大家工作和查找。
   merge(x, y) // => output
   ```
 
+- [AnimeJS](https://animejs.com/) 一个特别优秀的 JS 动画库，非常值得关注。
+
+- [Slidev](https://cn.sli.dev/) 用 Markdown 来编写 PPT，网站也提供了一下精美的案例
+
+- [Lucide](https://lucide.dev/) 图标 Icon 组件，能用于任何框架。Icon数量有上千个，且全部免费。
+
+- [shadcn/ui](https://ui.shadcn.com/) 目前最火的 UI 组件库了，完全开源，它是直接发送源代码的形式，让你可以自定义自己的 UI 组件。好多 UI 组件库都基于 [shadcn/ui](https://ui.shadcn.com/) 来做的二次开发。如果需要整体的主体色，这里有个工具 [tweakcn](https://tweakcn.com/)，可以可视化的调整主体色，然后再一键导出。
+
+
 ## Canvas Tools
 - [snapdom](https://www.npmjs.com/package/@zumer/snapdom) 比 html2canvas 更优秀的网页截屏包
 
@@ -392,9 +414,40 @@ npm 工具包集合，方便大家工作和查找。
   });
   ```
 
-## AI Tools
-- [stagehand](https://www.stagehand.dev/) 操作无头浏览器+AI加持，对比 [Puppeteer](https://puppeteer.bootcss.com/api)，支持 Chrome + Fixfox。也是 [Puppeteer](https://puppeteer.bootcss.com/api) 的开发团队开发的。
 
-  ```js
-  page.goto("browserstore.com/cookies");
-  ```
+## AI Tools
+- [Flowise](https://flowiseai.com/) 使用工具流的方式构建一个 AI Agent
+
+- [AI.SDK](https://ai-sdk.dev/) 抹平各个 AI 大语言模型的 API 差异，直接可以介入业务逻辑的开发。
+
+- [Chat SDK](https://chat-sdk.dev/) 就是聊天机器人搭建。基于 Next.js
+
+
+## React Ecology
+- [React Bits](https://reactbits.dev/get-started/index) React 视觉工具库，非常多的效果。
+
+- [Zustand](https://zustand.docs.pmnd.rs/) React 状态管理器，相比于 Redux，更加的简单。对于小型项目非常合适。
+demo:<br>
+```js
+import { create } from 'zustand'
+
+const useBear = create((set) => ({
+  bears: 0,
+  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
+  removeAllBears: () => set({ bears: 0 }),
+  updateBears: (newBears) => set({ bears: newBears }),
+}))
+```
+
+-[React Flow](https://reactflow.dev/) 专门提供 Flow 这种形式的开发框架，具体你用 Flow 干什么它不关系，它只提供 Flow 的能力
+
+## Vue Ecology
+- [Vue Bits](https://vue-bits.dev/text-animations/split-text) Vue 视觉工具库，非常多的效果。
+
+## Cross platform Framework
+- [Lynx](https://lynxjs.org/zh/) IOS、安卓、鸿蒙和WEB 跨端框架，使用原生组件，编译成原生代码。有中文文档，字节跳动开源。
+
+- [Expo](https://expo.dev/) 基于 RN 做了开发环境的集成，用户直接通过 ts + react 开发就行，不需要配置开发环境（因为 RN 的开发环境配置需要安卓等原生知识）。
+
+## Other
+- [BentoPDF](https://www.bentopdf.com/) 一个免费的 PDF 工具集网站
