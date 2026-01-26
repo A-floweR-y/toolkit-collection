@@ -181,6 +181,25 @@ npm 工具包集合，方便大家工作和查找。
   //=> 'unicorns'
   ```
 
+- [ora](https://www.npmjs.com/package/ora) ora 是一个命令行 loading 执行器，它内部使用了 [cli-spinners](https://www.npmjs.com/package/cli-spinners) 提供的丰富 loading 素材，通过 [cli-cursor](https://www.npmjs.com/package/cli-cursor) 来实现是否隐藏光标的功能。
+
+  ```js
+  import ora from 'ora';
+
+  const spinner = ora('Loading unicorns').start();
+  
+  setTimeout(() => {
+  	spinner.color = 'yellow';
+  	spinner.text = 'Loading rainbows';
+  }, 1000);
+  ```
+  demo:<br>
+  ![ora demo](https://github.com/sindresorhus/ora/blob/HEAD/screenshot.svg)
+
+  cli-spinners 内置效果展示:<br>
+  ![cli-spinners demo](https://github.com/sindresorhus/cli-spinners/blob/main/screenshot.svg)
+
+
 ## Promise Tools
 - [promise-limit](https://www.npmjs.com/package/promise-limit) 限制 Promise 的并发数量，一般在 `Promise.all` 发起大量 Promise 时使用.
 
