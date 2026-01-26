@@ -460,7 +460,7 @@ const useBear = create((set) => ({
 }))
 ```
 
--[React Flow](https://reactflow.dev/) 专门提供 Flow 这种形式的开发框架，具体你用 Flow 干什么它不关系，它只提供 Flow 的能力
+- [React Flow](https://reactflow.dev/) 专门提供 Flow 这种形式的开发框架，具体你用 Flow 干什么它不关系，它只提供 Flow 的能力
 
 ## Vue Ecology
 - [Vue Bits](https://vue-bits.dev/text-animations/split-text) Vue 视觉工具库，非常多的效果。
