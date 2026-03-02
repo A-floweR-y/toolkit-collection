@@ -182,9 +182,9 @@ npm 工具包集合，方便大家工作和查找。
   ```js
   import {execa} from 'execa';
 
-  const {stdout} = await execa('echo', ['unicorns']);
+  const {stdout} = await execa`npm run build`;
+  // Print command's output
   console.log(stdout);
-  //=> 'unicorns'
   ```
 
 - [ora](https://www.npmjs.com/package/ora) ora 是一个命令行 loading 执行器，它内部使用了 [cli-spinners](https://www.npmjs.com/package/cli-spinners) 提供的丰富 loading 素材，通过 [cli-cursor](https://www.npmjs.com/package/cli-cursor) 来实现是否隐藏光标的功能。
