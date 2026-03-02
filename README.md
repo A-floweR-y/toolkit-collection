@@ -435,6 +435,18 @@ npm 工具包集合，方便大家工作和查找。
   });
   ```
 
+- [Rough.js](https://www.npmjs.com/package/roughjs) 手绘风格的图形
+
+  ```js
+  const rc = rough.canvas(document.getElementById('canvas'));
+  rc.rectangle(10, 10, 200, 200); // x, y, width, height
+  ```
+  ![Rough.js Demo](https://camo.githubusercontent.com/c83edb407f007aa00118a596bb98d2fd30484be34b9fc4a2c55a98b4da528291/68747470733a2f2f726f7567686a732e636f6d2f696d616765732f6361705f64656d6f2e706e67)
+
+- [canvas confetti](https://www.npmjs.com/package/canvas-confetti) 彩带效果。[demo 网站](https://www.kirilv.com/canvas-confetti/).
+
+- [fireworks.js](https://fireworks.js.org/) 烟花效果，官网给了配置调整功能，可实时预览效果
+
 
 ## AI Tools
 - [Flowise](https://flowiseai.com/) 使用工具流的方式构建一个 AI Agent
