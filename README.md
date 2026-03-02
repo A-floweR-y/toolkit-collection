@@ -15,7 +15,7 @@ npm 工具包集合，方便大家工作和查找。
 - [*React Ecology*](#react-ecology) React 生态
 - [*Vue Ecology*](#vue-ecology) Vue 生态
 - [*Cross platform Framework*](#cross-platform-framework) 跨端框架
-- [*Other](#ohter) 跟前端无关的工具
+- [*Other*](#other) 跟前端无关的工具
 
 ## Server Tools
 - [portfinder](https://www.npmjs.com/package/portfinder) 自由端口查找器。当你所编写的服务需要一个端口，并且，你不确定哪些端口可以使用时。这个包可以找到目前未被占用的端口。
@@ -225,6 +225,22 @@ npm 工具包集合，方便大家工作和查找。
   ```
   demo:<br>
   ![Listr2 Demo](https://media.githubusercontent.com/media/listr2/listr2/master/examples/renderer-default.gif)
+
+- [clipboardy](https://www.npmjs.com/package/clipboardy) nodejs 读写 剪切版 功能。支持文本+图片
+  ```ts
+  import clipboard from 'clipboardy';
+
+  await clipboard.write('🦄');
+  
+  await clipboard.read();
+  //=> '🦄'
+  
+  // Or use the synchronous API
+  clipboard.writeSync('🦄');
+  
+  clipboard.readSync();
+  //=> '🦄'
+  ```
 
 
 ## Promise Tools
